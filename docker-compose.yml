@@ -1,0 +1,31 @@
+version: "3"
+services:
+  prod:
+    image: lionezajoao/docker-example:latest
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+      dockerfile: compose.Dockerfile
+    env_file:
+      - .env.docker
+    networks:
+      - default
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+
+    # Adicionando persistência de dados
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+
+networks:
+  default:
+    driver: bridge
