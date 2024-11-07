@@ -1,10 +1,9 @@
 import os
-import pandas as pd
+import csv
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
-from models import User
-import csv
+from app.models import User
 
 load_dotenv()
 

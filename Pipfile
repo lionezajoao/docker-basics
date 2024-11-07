@@ -14,9 +14,9 @@ openpyxl = "*"
 [dev-packages]
 
 [scripts]
-prod = "uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4 --env-file .env.prod"
-dev = "uvicorn main:app --host localhost --port 8001 --reload --env-file .env.dev"
-compose = "uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4 --env-file .env.docker"
+prod = "uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4 --env-file .env.prod"
+dev = "uvicorn app.main:app --host localhost --port 8001 --reload --env-file .env.dev"
+compose = "uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4 --env-file .env.docker"
 
 [requires]
 python_version = "3.11"
